@@ -1,12 +1,14 @@
-import { Component, OnInit, OnDestroy, HostListener } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-registerpage",
-  templateUrl: "registerpage.component.html",
-  styleUrls: ['./../../index/index.component.scss', './registerpage.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./../../index/index.component.scss', './login.component.scss']
 })
-export class RegisterpageComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
+
   isCollapsed = true;
   focus;
   focus1;
@@ -15,6 +17,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
   formSubmitted: boolean = false;
   constructor(
     private fb: FormBuilder,
+    private router: Router,
   ) {}
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
@@ -100,6 +103,7 @@ export class RegisterpageComponent implements OnInit, OnDestroy {
     if (this.form && this.form.status === 'INVALID') {
       return;
     }
-
+    this.router.navigate['profile'];
   }
+
 }

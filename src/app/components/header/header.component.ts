@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import noUiSlider from "nouislider";
 
 @Component({
@@ -7,7 +7,7 @@ import noUiSlider from "nouislider";
   styleUrls: ['./header.component.scss', './../../pages/index/index.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  @Input() isLogged: boolean = false;
   isCollapsed = true;
   focus;
   focus1;

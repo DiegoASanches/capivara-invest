@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
@@ -24,6 +24,9 @@ import { LandingpageComponent } from "./examples/landingpage/landingpage.compone
 import { NavbarModule } from "../components/navbar/navbar.module";
 import { MainBannerModule } from "../components/main-banner/main-banner.module";
 import { HeaderModule } from "../components/header/header.module";
+import { FooterModule } from "../components/footer/footer.module";
+import { LoginComponent } from "./examples/login/login.component";
+import { AddInvestmentModule } from "./examples/profilepage/add-investment/add-investment.module";
 
 @NgModule({
   imports: [
@@ -33,6 +36,7 @@ import { HeaderModule } from "../components/header/header.module";
     BrowserModule,
     FormsModule,
     HeaderModule,
+    FooterModule,
     RouterModule,
     BsDropdownModule.forRoot(),
     ProgressbarModule.forRoot(),
@@ -46,12 +50,15 @@ import { HeaderModule } from "../components/header/header.module";
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
+    ReactiveFormsModule,
+    AddInvestmentModule,
   ],
   declarations: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    LoginComponent,
   ],
   exports: [
     IndexComponent,

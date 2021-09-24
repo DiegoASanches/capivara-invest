@@ -17,29 +17,10 @@
                   src="assets/img/square4.png"
                 />
 
-                <h4 class="card-title">Cadastro</h4>
+                <h4 class="card-title">Login</h4>
               </div>
               <div class="card-body">
                 <form class="form" [formGroup]="form">
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus === true }"
-                  >
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-single-02"> </i>
-                      </div>
-                    </div>
-                    <input
-                      formControlName="username"
-                      class="form-control"
-                      placeholder="Nome Completo"
-                      type="text"
-                      (focus)="focus = true"
-                      (blur)="focus = false"
-                    />
-                  </div>
-                  <span class="error" *ngIf="formSubmitted && form.controls['username'].hasError('required')">Preencha o campo "NOME COMPLETO"</span>
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus1 === true }"
@@ -85,7 +66,7 @@
                   class="btn btn-danger btn-round btn-lg"
                   href="javascript:void(0)"
                 >
-                  Cadastrar
+                  Login
                 </a>
               </div>
             </div>
