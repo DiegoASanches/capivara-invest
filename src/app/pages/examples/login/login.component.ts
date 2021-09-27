@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/shared/services/authService.service';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private authService: AuthServiceService,
   ) {}
   @HostListener("document:mousemove", ["$event"])
   onMouseMove(e) {
@@ -85,7 +87,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      username: [null, [Validators.required]],
       email: [null, [Validators.compose([Validators.required, Validators.email])]],
       password: [null, Validators.required],
     });
@@ -100,10 +101,12 @@ export class LoginComponent implements OnInit {
   }
   onSubmit() {
     this.formSubmitted = true;
+    console.log('form', this.form);
     if (this.form && this.form.status === 'INVALID') {
       return;
     }
-    this.router.navigate['profile'];
+    this.router.navigate(['profile']);
+    this.authService.setLogged();
   }
 
 }

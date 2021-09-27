@@ -40,6 +40,7 @@
                     />
                   </div>
                   <span class="error" *ngIf="formSubmitted && form.controls['email'].hasError('required')">Preencha o campo "EMAIL"</span>
+                  <span class="error" *ngIf="formSubmitted && form.controls['email'].hasError('email')">Email inválido</span>
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus2 === true }"
@@ -53,7 +54,7 @@
                       formControlName="password"
                       class="form-control"
                       placeholder="Senha"
-                      type="text"
+                      type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
                     />

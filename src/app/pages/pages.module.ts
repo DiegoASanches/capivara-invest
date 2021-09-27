@@ -27,6 +27,10 @@ import { HeaderModule } from "../components/header/header.module";
 import { FooterModule } from "../components/footer/footer.module";
 import { LoginComponent } from "./examples/login/login.component";
 import { AddInvestmentModule } from "./examples/profilepage/add-investment/add-investment.module";
+import { NavbarLoggedModule } from "../components/navbar-logged/navbar-logged.module";
+import { AuthServiceService } from "../shared/services/authService.service";
+import { TimelineComponent } from "./examples/timeline/timeline.component";
+import { LogoutComponent } from "./examples/logout/logout.component";
 
 @NgModule({
   imports: [
@@ -52,6 +56,7 @@ import { AddInvestmentModule } from "./examples/profilepage/add-investment/add-i
     ModalModule.forRoot(),
     ReactiveFormsModule,
     AddInvestmentModule,
+    NavbarLoggedModule,
   ],
   declarations: [
     IndexComponent,
@@ -59,6 +64,8 @@ import { AddInvestmentModule } from "./examples/profilepage/add-investment/add-i
     RegisterpageComponent,
     LandingpageComponent,
     LoginComponent,
+    TimelineComponent,
+    LogoutComponent,
   ],
   exports: [
     IndexComponent,
@@ -66,6 +73,6 @@ import { AddInvestmentModule } from "./examples/profilepage/add-investment/add-i
     RegisterpageComponent,
     LandingpageComponent
   ],
-  providers: []
+  providers: [AuthServiceService]
 })
 export class PagesModule {}

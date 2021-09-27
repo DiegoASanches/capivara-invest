@@ -1,0 +1,33 @@
+<ul class="navbar-nav">
+  <li class="dropdown nav-item" dropdown>
+    <a
+      class="dropdown-toggle nav-link dropdown-toggle"
+      data-toggle="dropdown"
+      dropdownToggle
+      href="javascript:void(0)"
+    >
+      <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Área do usuário
+    </a>
+    <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+      <a class="dropdown-item" [routerLink]="['/timeline']">
+        <i class="tim-icons icon-bullet-list-67"> </i> Timeline
+      </a>
+      <a class="dropdown-item" [routerLink]="['/users']">
+        <i class="tim-icons icon-bullet-list-67"> </i> Usuários
+      </a>
+      <a class="dropdown-item" [routerLink]="['/logout']">
+        <i class="tim-icons icon-image-02"> </i> Sair
+      </a>
+    </div>
+  </li>
+  <li>
+    <a [routerLink]="['/profile']">
+      <img
+        alt="Circle image"
+        class="img-fluid rounded-circle shadow"
+        src="assets/img/james.jpg"
+        style="width: 150px"
+      />
+    </a>
+  </li>
+</ul>

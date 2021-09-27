@@ -59,6 +59,7 @@
                     />
                   </div>
                   <span class="error" *ngIf="formSubmitted && form.controls['email'].hasError('required')">Preencha o campo "EMAIL"</span>
+                  <span class="error" *ngIf="formSubmitted && form.controls['email'].hasError('email')">Email inválido</span>
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus2 === true }"
@@ -72,21 +73,18 @@
                       formControlName="password"
                       class="form-control"
                       placeholder="Senha"
-                      type="text"
-                      (focus)="focus2 = true"
-                      (blur)="focus2 = false"
+                      type="password"
                     />
                   </div>
                   <span class="error" *ngIf="formSubmitted && form.controls['password'].hasError('required')">Preencha o campo "SENHA"</span>
                 </form>
               </div>
               <div class="card-footer" (click)="onSubmit()">
-                <a
+                <button
                   class="btn btn-danger btn-round btn-lg"
-                  href="javascript:void(0)"
                 >
                   Cadastrar
-                </a>
+              </button>
               </div>
             </div>
           </div>
